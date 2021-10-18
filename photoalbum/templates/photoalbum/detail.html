@@ -1,0 +1,6 @@
+<h1>{{ image.image_name }}</h1>
+<h2>Uploaded at: {{ image.date_publishedgi }}</h2>
+<ul>
+    {% load static %}
+                <img src=" {% static  'photoalbum/image/'%}{{ image.filename }}">
+</ul>

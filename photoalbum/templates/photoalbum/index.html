@@ -1,0 +1,14 @@
+{% if latest_image_list %}
+    <ul>
+    {% for image in latest_image_list %}
+        <li><a href="{% url 'photoalbum:detail' image.id%}">
+            {% load static %}
+                <img src=" {% static  'photoalbum/image/'%}{{ image.filename }}">
+        </a>
+        </li>
+    {% endfor %}
+    <li><a href="{% url 'photoalbum:upload'  %}">Upload Image</a></li>
+    </ul>
+{% else %}
+    <p>No image are available.</p>
+{% endif %}
